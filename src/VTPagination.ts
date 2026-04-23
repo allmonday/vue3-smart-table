@@ -1,4 +1,4 @@
-import { computed, defineComponent, h, VNode } from 'vue-demi'
+import { computed, defineComponent, h, VNode } from 'vue'
 import { createIcon } from './icon-utils'
 
 interface Page {
@@ -143,14 +143,8 @@ export default defineComponent({
             style: {
               ...(disabled ? { cursor: 'not-allowed' } : {})
             },
-            attrs: {
-              href: 'javascript:void(0)'
-            },
             href: 'javascript:void(0)',
             ...(disabled ? {} : { onClick }),
-            on: {
-              ...(disabled ? {} : { click: onClick })
-            }
           },
           [children])]
       )

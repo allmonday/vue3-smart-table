@@ -7,7 +7,7 @@ To enable it, you need to provide the `pageSize` and `currentPage` properties on
 <VTable
   :data="users"
   :pageSize="10"
-  :currentPage.sync="currentPage"
+  v-model:currentPage="currentPage"
 >
   ...
 </VTable>
@@ -19,7 +19,7 @@ If this property is present, client side pagination will be enabled.
 
 ## Current Page <Badge text="number"/>
 The `currentPage` property indicates the current active page.
-This property must be bound with a `sync` modifier for Vue 2 and with `v-model:currentPage` for Vue 3, since the `VTable` itself
+This property must be bound with `v-model:currentPage`, since the `VTable` itself
 may update its value, e.g. if a new filter is applied, and the amount of available items decreases,
 and the current active page is no longer valid.
 
@@ -45,13 +45,13 @@ The component requires the following properties:
 
 ### Current Page <Badge text="number"/>
 This should be the same `currentPage` property used for the `VTable` component,
-and it should also be bound with the `sync` modifier for Vue or `v-model:currentPage` for Vue 3, 
+and it should also be bound with `v-model:currentPage`,
 that way whenever either of them changes it the other will be notified.
 
 ## Example
 
 <CodeGroup>
-  <CodeGroupItem title="vue 3" active>
+  <CodeGroupItem title="template" active>
 
  ```html
  <template>
@@ -80,43 +80,6 @@ that way whenever either of them changes it the other will be notified.
 
     <VTPagination
       v-model:currentPage="currentPage"
-      :total-pages="totalPages"
-      :boundary-links="true"
-    />
-  </div>
-</template>
- ```
-  </CodeGroupItem>
-
-  <CodeGroupItem title="vue 2">
-
- ```html
- <template>
-  <div>
-    <VTable
-      :data="users"
-      :page-size="5"
-      currentPage.sync="currentPage"
-      @totalPagesChanged="totalPages = $event"
-    >
-      <template #head>
-        <th>Name</th>
-        <th>Age</th>
-        <th>State</th>
-        <th>Registered</th>
-      </template>
-      <template #body="{rows}">
-        <tr v-for="row in rows" :key="row.guid">
-          <td>{{ row.name }}</td>
-          <td>{{ row.age }}</td>
-          <td>{{ row.address.state }}</td>
-          <td>{{ row.registered }}</td>
-        </tr>
-      </template>
-    </VTable>
-
-    <VTPagination
-      currentPage.sync="currentPage"
       :total-pages="totalPages"
       :boundary-links="true"
     />
@@ -189,7 +152,7 @@ But you also have the ability to provide custom icons for any of those four butt
 
 ```html
 <VTPagination
-      currentPage.sync="currentPage"
+      v-model:currentPage="currentPage"
       :total-pages="totalPages"
 >
   <template #firstPage>

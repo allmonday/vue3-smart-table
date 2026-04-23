@@ -14,12 +14,16 @@ Through the documentation you will see a `Global` badge on certain settings, tha
 
 ## Example
 ```js
-import SmartTable from 'vuejs-smart-table'
+import { createApp } from 'vue'
+import SmartTable from 'vue3-smart-table'
+import App from './App.vue'
 
-Vue.use(SmartTable, {
+const app = createApp(App)
+app.use(SmartTable, {
   sortIconPosition: 'before',
   sortHeaderClass: 'custom-header',
   hideSortIcons: true,
   selectOnClick: false
 })
+app.mount('#app')
 ```

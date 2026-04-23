@@ -1,4 +1,4 @@
-import { h } from 'vue-demi'
+import { h } from 'vue'
 import { SortOrder } from './types'
 
 export function createIcon(props: { vbWidth: number, vbHeight: number, d: string, opacity?: number, disabled?: boolean }) {
@@ -16,16 +16,12 @@ export function createIcon(props: { vbWidth: number, vbHeight: number, d: string
   }
 
   return h('svg', {
-      attrs: svgAttrs,
       ...svgAttrs,
       style: {
         ...(props.disabled ? { color: '#9CA3AF'}: {})
       }
     },
-    [h('path', {
-      attrs: pathAttrs,
-      ...pathAttrs
-    })])
+    [h('path', pathAttrs)])
 }
 
 export function createSortIcon(order: SortOrder) {
@@ -48,18 +44,9 @@ export function createSortIcon(order: SortOrder) {
     d: 'M24.05 183.05l119.1-119A23.9 23.9 0 0 1 177 64a.94.94 0 0 1 .1.1l119 119c15.1 15.1 4.4 41-17 41h-238c-21.45-.05-32.1-25.95-17.05-41.05z'
   })
 
-  return h('svg', {
-      attrs: svgAttrs,
-      ...svgAttrs
-    },
+  return h('svg', svgAttrs,
     [h('g', [
-      h('path', {
-        attrs: upAttrs(),
-        ...upAttrs()
-      }),
-      h('path', {
-        attrs: downAttrs(),
-        ...downAttrs()
-      })
+      h('path', upAttrs()),
+      h('path', downAttrs())
     ])])
 }

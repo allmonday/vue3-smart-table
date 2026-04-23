@@ -23,18 +23,20 @@ When you need it, you can enable extra functionality in a way that feels natural
 ### Installation
 To install simply run
 ```
-npm add vuejs-smart-table@next
+npm add vue3-smart-table
 ```
 or
 ```
-yarn add vuejs-smart-table@next
+yarn add vue3-smart-table
 ```
 
 Then in your `main.js`
 ```js
-import SmartTable from 'vuejs-smart-table'
+import SmartTable from 'vue3-smart-table'
 
-Vue.use(SmartTable)
+const app = createApp(App)
+app.use(SmartTable)
+app.mount('#app')
 ```
 This will globally register four Components: `VTable`, `VTh`, `VTr` and `VTPagination`
 

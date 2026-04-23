@@ -1,5 +1,5 @@
 import { Sort, SortOrder, State, TableState } from './types'
-import { computed, reactive, ComputedRef, watch, Ref } from 'vue-demi'
+import { computed, reactive, ComputedRef, watch, Ref } from 'vue'
 import { calculateTotalPages, doFilter, doPaginate, doSort } from './table-utils'
 
 export class Store {
@@ -21,7 +21,7 @@ export class Store {
     sortHeaderClass: ''
   })
 
-  private readonly emit: (event: string, payload: any) => void
+  private readonly emit: (event: string, ...args: any[]) => void
   public filteredData: ComputedRef<any[]>
   public sortedData: ComputedRef<any[]>
   public totalItems: ComputedRef<number>
@@ -30,7 +30,7 @@ export class Store {
   public displayData: ComputedRef<any[]>
   public tableState: ComputedRef<TableState>
 
-  constructor(emitFn: (event: string, payload: any) => void) {
+  constructor(emitFn: (event: string, ...args: any[]) => void) {
     this.emit = emitFn
 
     this.filteredData = computed(() => {

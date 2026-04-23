@@ -1,4 +1,4 @@
-import { defineComponent, watch, toRef, PropType, h, provide, InjectionKey, isVue2, computed } from 'vue-demi'
+import { defineComponent, watch, toRef, PropType, h, provide, InjectionKey, computed } from 'vue'
 import { Filters, SelectionMode, TableState } from './types'
 import { Store } from './Store'
 
@@ -64,8 +64,7 @@ export default defineComponent({
     totalItemsChanged: (pages: number) => true
   },
   setup (props, ctx) {
-    // @ts-ignore
-    const store = new Store(ctx.emit)
+    const store = new Store(ctx.emit as (event: string, ...args: any[]) => void)
     provide(storeKey, store)
 
     store.syncProp('data', toRef(props, 'data'))

@@ -1,4 +1,4 @@
-import { computed, defineComponent, h, inject } from 'vue-demi'
+import { computed, defineComponent, h, inject } from 'vue'
 import { storeKey } from './VTable'
 
 export default defineComponent({
@@ -31,10 +31,7 @@ export default defineComponent({
       return h('tr', {
           class: rowClass.value,
           style: style.value,
-          ...(store.state.selectOnClick ? {onClick: handleRowSelected} : {}),
-          on: {
-            ...(store.state.selectOnClick ? {click: handleRowSelected} : {}),
-          }
+          ...(store.state.selectOnClick ? { onClick: handleRowSelected } : {}),
         },
         slots.default ? slots.default({
           isSelected: isSelected.value,

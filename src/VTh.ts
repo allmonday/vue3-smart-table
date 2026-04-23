@@ -1,5 +1,4 @@
-import { uuid } from './table-utils'
-import { computed, defineComponent, h, isVue2, nextTick, onMounted, PropType, ref, watch, inject } from 'vue-demi'
+import { computed, defineComponent, h, nextTick, onMounted, PropType, ref, watch, inject, useId } from 'vue'
 import { CustomSort, SortKey, SortOrder } from './types'
 import { createSortIcon } from './icon-utils'
 import { storeKey } from './VTable'
@@ -32,7 +31,7 @@ export default defineComponent({
       throw new Error('Must provide the Sort Key value or a Custom Sort function.')
     }
 
-    const id = uuid()
+    const id = useId()
     const order = ref<SortOrder>(SortOrder.NONE)
 
     onMounted(() => {
@@ -104,13 +103,7 @@ export default defineComponent({
     return () => {
       return h('th', {
         class: 'v-th',
-        ...(isVue2 ? {
-          on: {
-            click: sort
-          }
-        } : {
-          onClick: sort
-        })
+        onClick: sort,
       }, [
         h('div', { class: store.state.sortHeaderClass }, children.value)
       ])

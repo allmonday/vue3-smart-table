@@ -1,6 +1,6 @@
 module.exports = {
   lang: 'en-US',
-  title: 'Vue Smart Table',
+  title: 'Vue3 Smart Table',
   description: 'Simple and feature packed table components',
   themeConfig: {
     navbar: [

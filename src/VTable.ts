@@ -98,7 +98,7 @@ export default defineComponent({
   },
   render () {
     return h('table', {
-      class: 'v-table'
+      class: 'smart-table'
     }, [
       h('thead', this.slots.head ? this.slots.head({
         rows: this.tableState.rows,

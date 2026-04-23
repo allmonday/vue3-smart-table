@@ -20,7 +20,7 @@ describe('VTable', () => {
       },
     })
 
-    expect(wrapper.find('table.v-table').exists()).toBe(true)
+    expect(wrapper.find('table.smart-table').exists()).toBe(true)
     expect(wrapper.find('thead').exists()).toBe(true)
     expect(wrapper.find('tbody').exists()).toBe(true)
   })

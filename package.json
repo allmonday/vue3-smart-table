@@ -1,58 +1,43 @@
 {
-  "name": "vuejs-smart-table",
-  "keywords": [
-    "vue",
-    "table",
-    "grid",
-    "datagrid"
+  "name": "vue3-smart-table",
+  "version": "0.2.0",
+  "files": [
+    "dist"
   ],
-  "version": "0.0.8",
-  "private": false,
-  "main": "src/main.js",
-  "author": "Hector Romero Granillo",
-  "repository": "https://github.com/tochoromero/vuejs-smart-table",
-  "license": "MIT",
-  "scripts": {
-    "build": "vue-cli-service build --target lib --name smart-table src/main.js",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit --reporter mocha-junit-reporter --reporter-options mochaFile=./tests/results/test_results.xml",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+  "main": "./dist/vue3-smart-table.umd.js",
+  "module": "./dist/vue3-smart-table.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/vue3-smart-table.mjs",
+      "require": "./dist/vue3-smart-table.umd.js"
+    }
   },
-  "dependencies": {
-    "vue": "^2.5.17"
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build && yarn run tsDeclaration",
+    "tsDeclaration": "tsc -p tsconfig.json -d --outDir dist/types --emitDeclarationOnly",
+    "serve": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:serve": "vuepress serve docs"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.3",
-    "@vue/cli-plugin-babel": "^3.1.1",
-    "@vue/cli-plugin-eslint": "^3.1.5",
-    "@vue/cli-plugin-unit-mocha": "^3.1.1",
-    "@vue/cli-service": "^3.1.4",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "@vue/test-utils": "^1.0.0-beta.20",
-    "babel-eslint": "^10.0.1",
-    "bootstrap": "^4.2.1",
-    "chai": "^4.1.2",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0-0",
-    "lint-staged": "^7.2.2",
-    "mocha-junit-reporter": "^1.18.0",
-    "sass": "^1.30.0",
-    "sass-loader": "^10.1.0",
-    "vue-template-compiler": "^2.5.17",
-    "vuepress": "^0.14.8"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/compiler-sfc": "^3.5.0",
+    "@vue/test-utils": "^2.4.0",
+    "happy-dom": "^17.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0",
+    "vue": "^3.5.0",
+    "vue-tsc": "^2.2.0",
+    "vuepress": "^2.0.0-beta.8"
   }
 }

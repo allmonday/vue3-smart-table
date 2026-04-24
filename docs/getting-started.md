@@ -1,27 +1,20 @@
-# Vue3 Smart Table
+# Getting Started
 
-> Vue 3 rewrite of [vuejs-smart-table](https://github.com/tochoromero/vuejs-smart-table). Removed `vue-demi`, targeting Vue 3.5+ only.
-
+### Why Smart Table
 There are a lot of Data Table plugins out there, some of them are very good but pretty much all of them are very complicated to use.
 What I really wanted was the simplicity of a vanilla HTML table but with the power of the more complex Data Table plugins.
 
-Vue3 Smart Table is the answer to that need. Creating a Smart Table is almost as simply as creating a Vanilla HTML Table.
+Vue Smart Table is the answer to that need. Creating a Smart Table is almost as simply as creating a Vanilla HTML Table.
 When you need it, you can enable extra functionality in a way that feels natural. It is very straight forward, you can learn everything you need to know on one sit.
 
-## Changes from vuejs-smart-table
-
-- Removed `vue-demi` — no longer supports Vue 2
-- Requires **Vue 3.5+**
-- Upgraded build toolchain: Vite 6, TypeScript 5, vue-tsc 2
-- Uses Vue 3.5 `useId()` internally
-- Added Vitest test suite
-
-## Documentation
-You can find the documentation [here](https://vue-smart-table.netlify.app).
-
-## Installation
+### Installation
+To install simply run
 ```
 npm install vue3-smart-table
+```
+or
+```
+yarn add vue3-smart-table
 ```
 
 Then in your `main.js`

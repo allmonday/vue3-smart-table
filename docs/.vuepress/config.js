@@ -1,26 +1,38 @@
 module.exports = {
-  title: 'VueJs Smart Table',
-  base: '/vuejs-smart-table/',
-  description: 'Simple yet powerful Data Table for Vue',
-  configurewebpack: {
-    resolve: {
-      alias: {
-        'vue-smart-table': '../../src'
-      }
-    }
-  },
+  lang: 'en-US',
+  title: 'Vue3 Smart Table',
+  description: 'Simple and feature packed table components',
   themeConfig: {
-    repo: 'tochoromero/vuejs-smart-table',
-    docsDir: 'docs',
-    editLinks: true,
-    sidebarDepth: 1,
+    navbar: [
+      {
+        text: 'Documentation',
+        link: '/getting-started.md'
+      },
+      {
+        text: 'Migration Guide',
+        link: '/migration-guide.md'
+      },
+      {
+        text: 'Github',
+        link: 'https://github.com/tochoromero/vuejs-smart-table/tree/next'
+      }
+    ],
     sidebar: [
-      '/',
-      'the-basics/',
-      'filtering/',
-      'sorting/',
-      'pagination/',
-      'selection/'
+      {
+        isGroup: true,
+        text: 'Documentation',
+        children: [
+          '/getting-started.md',
+          '/the-basics.md',
+          '/filtering.md',
+          '/sorting.md',
+          '/selection.md',
+          '/pagination.md',
+          '/table-state.md',
+          '/global-settings.md',
+          '/migration-guide.md'
+        ],
+      },
     ]
   }
 }

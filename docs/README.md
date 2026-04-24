@@ -1,25 +1,43 @@
-# Introduction
+---
+home: true
+actions:
+- text: Documentation →
+  link: /getting-started.md
+  type: primary
+features:
+- title: Simple to use
+  details: Using Vue Smart Table is almost like using a regular HTML table and with very little effort you will get a lot out of it.
+- title: Standard HTML Table
+  details: The output of Vue Smart Table is a standard HTML table. We make no styling assumptions, so you can easily style however you desire.
+- title: Feature Packed
+  details: Out of the box you will get filtering, sorting, pagination and row selection.
+---
 
-Vue Smart Table was created out of the need for a simple highly customizable data table plugin 
-that could take advantage of Vue's slots. It has no dependencies but Vue and because it 
-renders as a standard HTML table it is compatible with CSS Frameworks such as Bootstrap and Foundation.
+### Why Smart Table
+There are a lot of Data Table plugins out there, some of them are very good but pretty much all of them are very complicated to use.
+What I really wanted was the simplicity of a vanilla HTML table but with the power of the more complex Data Table plugins.
 
-Out of the box you will get filtering, column sorting, client side pagination and row selection.
+Vue Smart Table is the answer to that need. Creating a Smart Table is almost as simply as creating a Vanilla HTML Table.
+When you need it, you can enable extra functionality in a way that feels natural. It is very straight forward, you can learn everything you need to know on one sit.
 
-## Installation
+### Installation
 To install simply run
 ```
-npm add vuejs-smart-table
+npm add vue3-smart-table
 ```
 or
 ```
-yarn add vuejs-smart-table
+yarn add vue3-smart-table
 ```
 
 Then in your `main.js`
 ```js
-import SmartTable from 'vuejs-smart-table'
+import SmartTable from 'vue3-smart-table'
 
-Vue.use(SmartTable)
+const app = createApp(App)
+app.use(SmartTable)
+app.mount('#app')
 ```
-This will globally register four Components: `v-table`, `v-th`, `v-tr` and `smart-pagination`
+This will globally register four Components: `VTable`, `VTh`, `VTr` and `VTPagination`
+
+Next learn how to create a [basic table](/the-basics.md)  

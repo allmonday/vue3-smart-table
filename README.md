@@ -1,5 +1,7 @@
 # Vue3 Smart Table
 
+[![npm version](https://img.shields.io/npm/v/vue3-smart-table-next.svg)](https://www.npmjs.com/package/vue3-smart-table-next)
+
 > Vue 3 rewrite of [vuejs-smart-table](https://github.com/tochoromero/vuejs-smart-table). Removed `vue-demi`, targeting Vue 3.5+ only.
 
 There are a lot of Data Table plugins out there, some of them are very good but pretty much all of them are very complicated to use.
@@ -21,13 +23,13 @@ You can find the documentation [here](https://vue-smart-table.netlify.app).
 
 ## Installation
 ```
-npm install vue3-smart-table
+npm install vue3-smart-table-next
 ```
 
 Then in your `main.js`
 ```js
 import { createApp } from 'vue'
-import SmartTable from 'vue3-smart-table'
+import SmartTable from 'vue3-smart-table-next'
 import App from './App.vue'
 
 const app = createApp(App)

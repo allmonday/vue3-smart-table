@@ -15,7 +15,7 @@ Through the documentation you will see a `Global` badge on certain settings, tha
 ## Example
 ```js
 import { createApp } from 'vue'
-import SmartTable from 'vue3-smart-table'
+import SmartTable from 'vue3-smart-table-next'
 import App from './App.vue'
 
 const app = createApp(App)

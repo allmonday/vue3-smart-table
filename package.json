@@ -1,5 +1,5 @@
 {
-  "name": "vue3-smart-table",
+  "name": "vue3-smart-table-next",
   "version": "0.2.0",
   "files": [
     "dist"
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build && yarn run tsDeclaration",
+    "build": "vue-tsc --noEmit && vite build && npm run tsDeclaration",
     "tsDeclaration": "tsc -p tsconfig.json -d --outDir dist/types --emitDeclarationOnly",
     "serve": "vite preview",
     "test": "vitest run",

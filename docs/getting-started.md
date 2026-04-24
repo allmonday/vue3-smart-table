@@ -10,17 +10,17 @@ When you need it, you can enable extra functionality in a way that feels natural
 ### Installation
 To install simply run
 ```
-npm install vue3-smart-table
+npm install vue3-smart-table-next
 ```
 or
 ```
-yarn add vue3-smart-table
+yarn add vue3-smart-table-next
 ```
 
 Then in your `main.js`
 ```js
 import { createApp } from 'vue'
-import SmartTable from 'vue3-smart-table'
+import SmartTable from 'vue3-smart-table-next'
 import App from './App.vue'
 
 const app = createApp(App)
